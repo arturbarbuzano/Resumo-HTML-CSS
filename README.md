@@ -5,7 +5,6 @@ Este documento apresenta um resumo simples e direto dos principais conceitos de 
 ## HTML
 
 ```sh
-
 <!DOCTYPE html> ---> Use versão HTML5
 <html> </html> ---> Arquivo HTML
 <head> </head> ---> Cabeça do Arquivo
@@ -40,7 +39,7 @@ Este documento apresenta um resumo simples e direto dos principais conceitos de 
 <a href="URL">Nome</a> --> Link
 <img src="caminho" alt="descrição (acessibilidade" width="largura" height="altura"> ---> Imagem
 <video src="caminho" width="largura" controls(adiciona controles:play, pause, volume)></video>
-<audio src"caminho" controls(adiciona controles:play, pause, volume)></audio
+<audio src"caminho" controls(adiciona controles:play, pause, volume)></audio>
 <iframe src="URL" width="largura"> </iframe> ---> Página dentro de outra Página
 
 <ol> ---> Lista Ordenada
@@ -78,7 +77,6 @@ Este documento apresenta um resumo simples e direto dos principais conceitos de 
   </select> --> Lista de Seleção 
   <button type="submit">Enviar</button> --> Botão (se difere do input type submit por ser mais flexível)
 </form> ---> Formulário
-
 ```
 
 
