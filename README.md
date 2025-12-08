@@ -121,6 +121,84 @@ Uma propriedade é uma característica de um elemento do HTML (cor de fundo, lar
 
 ### Formas de Declaração CSS
 
+CSS Inline: Adiciona o código CSS utilizando o atributo style dentro das tags HTML, tag por tag. 
+Vantagens: Fácil e rápido para testes; Afeta somente aquele elemento; Não precisa de arquivo CSS separado.
+Desvantagens: Difícil manutenção; Não pode ser reaproveitado; Utilizado para alterações muito específicas e únicas, como sobrescrever um estilo visto que o CSS Inline tem prioridade em cima das outras forma de declaração.
+
+CSS Interno: Adiciona o código CSS dentro da tag (head) da página HTML. Dentro dessa tag, é adicionado a tag (style) e colocamos as regras de CSS nessa área. 
+Vantagens: Código centralizado no próprio arquivo HTML; Mais organizado que inline. Permite reaproveitar estilos na mesma página.
+Desvantagens: Não reaproveita estilos entre várias páginas; Arquivo HTML fica grande.
+
+CSS Externo: Cria um arquivo CSS com todas as regras CSS que queremos aplicar e esse arquivo é referenciado no HTML da página através da tag (link). 
+Vantagens: Melhor organização e manutenção; Reutilização de estilos em várias páginas; HTML fica limpo.
+Desvantagens: Depende de requisição extra (pode afetar carregamento mínimo em internet lenta); Não funciona offline se a importação falhar.
+
+```sh
+--- CSS Inline ---
+
+<p style="color: red; font-size: 20px;">Texto</p>
+
+--- CSS Interno ---
+
+<head>
+  <style>
+    p {
+      color: blue;
+    }
+  </style>
+</head>
+
+--- CSS Externo ---
+
+<link rel="stylesheet" href="caminho"> ---> colocar no head da página HTML, atributo rel indica relação entre o arquivo atual com o arquivo CSS nesse caso
+
+-- dentro do arquivo css
+p {
+      color: blue;
+    }
+```
+
+### Seletores
+
+Seletores CSS são padrões que o navegador usa para encontrar e aplicar estilos a elementos HTML específicos. <br> Existem alguns tipos de seletores:
+
+```sh
+--- Seletor por Tipo/Tag: Busca elementos por uma tag HTML ---
+
+p {
+      background: blue;
+    }
+
+--- Seletor por ID: Busca elementos através do atributo id ---
+
+#texto {
+      color: red;
+    }
+
+<p id="texto"> Olá </p> 
+
+--- Seletor por Classe: Busca elementos através do atributo class ---
+
+.texto {
+    background: green;
+}
+
+<p class="texto"> Olá </p> 
+```
+
+### Combinadores
+
+asdasdasd
+
+```sh
+
+```
+
+### Dimensionamento e Espaçamento
+
+
+
+
 
 
 
