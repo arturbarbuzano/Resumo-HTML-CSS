@@ -1,6 +1,6 @@
-# GuiaRapido-HTML-CSS
+# Resumo HTML e CSS
 
-Este documento apresenta um resumo simples e direto dos principais conceitos de HTML e CSS.
+Este documento apresenta um conteúdo resumido sobre os principais conceitos de HTML e CSS.
 
 ## HTML
 
@@ -118,6 +118,8 @@ CSS (Cascading Style Sheets) é a linguagem de estilo usada para descrever a apr
 ### Propriedades e valores
 
 Uma propriedade é uma característica de um elemento do HTML (cor de fundo, largura, altura, espaçamento, etc). Um valor define o resultado de uma propriedade e como o navegador deve exibir o estilo daquele elemento. Um exemplo disso é: background (propriedade): red (valor);
+
+### Formas de Declaração CSS
 
 
 
