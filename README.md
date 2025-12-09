@@ -184,17 +184,54 @@ p {
 }
 
 <p class="texto"> Olá </p> 
+
+--- Seletor Universal: Seleciona todos os elementos do HTML ---
+
+* {
+  font-weight: bold;
+}
+
+--- Seletores de Atributo: Seleciona elementos que possuem um atributo específico e consegue também buscar atributo com um valor específco ---
+
+[title] {
+  color: blue;
+} 
+
+[title="Netflix"] {
+  color: red;
+}
+
+[title~="Streaming"] {
+  background: black;
+} 
+
+Obs: esse apresenta ~, ou seja, ele busca ou a palavra exata ou que pelo menos tenha essa palavra, por exemplo: "Streaming Netflix", "Prime Streaming", "Streaming", etc. Precisa ter pelo menos espaço, não pode ser "StreamingNetflix" ou "PrimeStreaming".
+
+[title|="Streaming"] {
+  background: black;
+} 
+
+Obs: esse apresenta |, ou seja, ele busca ou a palavra exata ou que pelo menos tenha essa palavra seguida de hífen, por exemplo: "Streaming-Netflix", "Streaming". Não funciona com "Prime-Streaming", pois a palavra buscada que precisa vir hífen depois dela e não antes.
+
+[href^="http://"] {
+  background: green;
+}
+
+Obs: atributo indicando que o valor que tiver esse prefixo "http://" vai receber a estilização.
+
+[href$="com"] {
+  background: blue;
+}
+
+Obs: atributo indicando que o valor que tiver esse sufixo "com" vai receber a estilização.
+
+[href*="escola"] {
+  background: yellow;
+}
+
+Obs: atributo indicando que se tiver esse valor "escola" em qualquer lugar do link, sem importar se é prefixo ou sufixo, vai receber a estilização.
+
 ```
-
-### Combinadores
-
-asdasdasd
-
-```sh
-
-```
-
-### Dimensionamento e Espaçamento
 
 
 
