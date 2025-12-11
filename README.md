@@ -160,7 +160,7 @@ p {
 
 ### Seletores
 
-Seletores CSS são padrões que o navegador usa para encontrar e aplicar estilos a elementos HTML específicos. <br> Existem alguns tipos de seletores:
+Seletores CSS são padrões que o navegador usa para encontrar e aplicar estilos a elementos HTML específicos. <br> Veja alguns tipos de seletores e combinadores que existem:
 
 ```sh
 --- Seletor por Tipo/Tag: Busca elementos por uma tag HTML ---
@@ -231,8 +231,29 @@ Obs: atributo indicando que o valor que tiver esse sufixo "com" vai receber a es
 
 Obs: atributo indicando que se tiver esse valor "escola" em qualquer lugar do link, sem importar se é prefixo ou sufixo, vai receber a estilização.
 
-```
+--- Agrupamento de Seletores: Aplica as mesmas regras de CSS para seletores diferentes utilizando vírgula ---
 
+.texto, h1, p, div, [title], #texto {
+  color: pink;
+}
+
+.texto.teste {
+  color: blue;
+}
+
+<div class="texto teste"> </div>
+
+Obs: Aplica a estilização só para a classe "texto teste", se tiver só texto ou só teste não funciona.
+
+p.texto {
+  background: gray;
+}
+
+Obs: Esse último especifíca que para aplicar o fundo cinza precisa ser um seletor com tag p e classe .texto.
+
+--- Combinador Descendente:   ---
+
+```
 
 
 
