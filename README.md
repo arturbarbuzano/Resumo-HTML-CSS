@@ -251,10 +251,84 @@ p.texto {
 
 Obs: Esse último especifíca que para aplicar o fundo cinza precisa ser um seletor com tag p e classe .texto.
 
---- Combinador Descendente:   ---
+--- Combinador Descendente: Relação entre dois seletores ou mais por meio de espaços  ---
 
+div p {
+  color: purple;
+}
+
+#lista01 li {
+  background: black;
+}
+
+.fundoverde #sublista01 li {
+  color: red;
+}
+
+--- Combinador Filho: Relação entre dois seletores ou mais utilizando o > ---
+
+div > p {
+  background: orange;
+}
+
+--- Combinador Irmão Adjacente: Relação entre dois seletores ou mais utilizando o +, no caso do irmão é porque a tag deve estar na mesma nível de indentação e adjacente, pois ele aplicará a estilização logo no irmão em seguida ---
+
+div + p {
+  color: tomato;
+}
+
+--- Combinador Irmão em Geral: Relação entre dois seletores ou mais utilizando o ~, no caso do irmão é porque a tag deve estar na mesma nível de indentação e em geral, pois ele aplicará a estilização em todos os irmãos independentemente se estiver logo em seguida ou não ---
+
+div ~ p {
+  background: green;
+}
+
+Obs: É possível utilizar todos os conceitos de seletores, agrupamento e combinadores juntos, basta utilizar a criatividade em seus projetos!
 ```
 
+### Dimensionamento e Espaçamento
+
+Largura = width: valor; <br>
+Largura Mínima = min-width: valor; <br>
+Largura Máxima = max-width: valor; <br>
+Altura = height: valor; <br>
+Altura Mínima = min-height: valor; <br>
+Altura Máxima = max-height: valor; <br>
+
+Margem: Espaçamento por fora dos elementos (tags). Existem 5 tags de estilização de margem que são: <br>
+  
+  ```sh
+  margin-top: valor; --> margem referente ao topo do elemento.
+  margin-left: valor; --> margem referente à esquerda do elemento.
+  margin-right: valor; --> margem referente à direita do elemento.
+  margin-botom: valor; --> margem referente à parte abaixo do elemento.
+  margin: valor; --> vai depender da quantidade de valores inseridos, por exemplo:
+    margin: 10px; --> em todos os lados;
+    margin: 10px 20px; --> primeiro valor: em cima e embaixo, segundo valor: lados;
+    margin: 10px 20px 30px; --> primeiro valor: em cima, segundo valor: lados, terceiro valor: embaixo;
+    margin: 10px 20px 30px 40px; --> primeiro valor: em cima, segundo valor: direita, terceiro valor: embaixo, quarto valor: esquerda;
+  ```
+Padding: Responsável por espaçar o conteúdo interno dos elementos. Por exemplo, existe uma div que possue um parágrafo colado em todos os lados, se aplicarmos o padding, é possível descolar o parágrafo, deixando uma borda interna que no caso é o padding. Segue a mesma estrutura das propriedades de margem: <br>
+
+  ```sh
+  padding-top: valor; --> margem referente ao topo do elemento.
+  padding-left: valor; --> margem referente à esquerda do elemento.
+  padding-right: valor; --> margem referente à direita do elemento.
+  padding-botom: valor; --> margem referente à parte abaixo do elemento.
+  padding: valor; --> vai depender da quantidade de valores inseridos, por exemplo:
+    padding: 10px; --> em todos os lados;
+    padding: 10px 20px; --> primeiro valor: em cima e embaixo, segundo valor: lados;
+    padding: 10px 20px 30px; --> primeiro valor: em cima, segundo valor: lados, terceiro valor: embaixo;
+    padding: 10px 20px 30px 40px; --> primeiro valor: em cima, segundo valor: direita, terceiro valor: embaixo, quarto valor: esquerda;
+
+  Obs: Importante notar que quando aumenta o padding, pode aumentar também a altura e largura do elemento. Portanto, pode ser interessante utilizar o box-sizing!
+  width = largura + borda + padding
+  height = altura + borda + padding
+  ```
+  
+Box-sizing: Responsável por calcular o tamanho total de um elemento (largura e altura). Controla se padding e border entram ou não na conta da largura/altura.
+
+Valores: auto = define um valor automático; initial = define um valor padrão/inicial; inherit = herda valor de propriedade da tag pai, content-box = padrão do CSS, adiciona padding e border por fora, border-box = respeita a largura aplicada, já incluindo padding e border.
 
 
 
