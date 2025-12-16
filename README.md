@@ -330,6 +330,16 @@ Box-sizing: Responsável por calcular o tamanho total de um elemento (largura e 
 
 Valores: auto = define um valor automático; initial = define um valor padrão/inicial; inherit = herda valor de propriedade da tag pai, content-box = padrão do CSS, adiciona padding e border por fora, border-box = respeita a largura aplicada, já incluindo padding e border.
 
+### Estilizações Básicas 
+
+```sh
+--- Cores ---
+
+
+```
+
+
+
 
 
 
