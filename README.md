@@ -333,9 +333,36 @@ Valores: auto = define um valor automático; initial = define um valor padrão/i
 ### Estilizações Básicas 
 
 ```sh
---- Cores ---
+--- CORES ---
 
+Pré-Definidas: Cores já estabelecidas na estilização, basta escrever o nome delas. Para saber mais, acessar o site: https://www.w3schools.com/tags/ref_colornames.asp
 
+color: purple;
+border: 2px solid currentcolor; 
+// palavra currentcolor referencia a cor atual do valor atual da propriedade color, nesse caso a cor da borda será roxo.
+
+RGB: Função rgb() que apresenta os valores de vermelho, verde e azul que podem variar de 0 a 255. Pode  utilizar também a porcentagem.
+
+color: rgb(255,255,255); ---> branco
+background: rgb(100%,0%,0%); --> vermelho
+
+RGBA: Função rgba() é similar ao rgb() e apresenta transparência da cor. Esse último valor varia de 0.0 (máximo de transparência) até 1.0 (sem nível de transparência).
+
+color: rgba(255,255,255,0.0); 
+background: rgba(0,0,0,1.0); 
+
+Hexadecimal: Formado por hashtag mais 6 dígitos, sendo 3 pares, um para vermelho, outro para verde e o último para azul. Variam de 00 (menor intensidade) para FF (maior intensidade). Os números variam de 0 a 9 e os caracteres variam de A a F. É possível adicionar transparência também que varia de 00 a FF.
+
+color: #00FF00; ---> verde sem transparência
+color: #00FF0000; ---> verde com transparência
+
+HSL: Composto por Hue (matiz), Saturation (saturação) e Lightness (luminosidade). Hue varia em graus na roda de cores de 0 a 360, onde 0 ou 360 é vermelho, 120 é verde e 240 é azul. Saturation varia em porcentagem onde 0% é cinza e 100% é cor com intensidade total. Lightness também possue valor percentual onde 0% é preto e 100% é branco.
+
+color: hsl(0,100%,30%);
+
+HSLA: Extende do HSL, a única mudança é a transparência de cor que varia de 0.0 (máximo de transparência) até 1.0 (sem nível de transparência).
+
+color: hsla(0,100%,30%,0);
 ```
 
 
