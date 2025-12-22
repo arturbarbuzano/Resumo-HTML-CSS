@@ -369,7 +369,43 @@ color: hsla(0,100%,30%,0);
 Propriedade object-fit: Determina como a imagem/vídeo vai ser redimensionada para caber na caixa do elemento. Sem precisar escrever, já vem como padrão "object-fit: fill;". Nesse caso, a imagem ou vídeo pode acabar sendo distorciada de acordo com os valores estabelecidos de largura e altura. 
 Por isso, é interessante utilizar o "object-fit: contain;", pois mantém as proporções da imagem/vídeo, embora ocorra a possiblidade de não preencher todo o espaço. Um outro valor que existe é o "object-fit: cover;", no qual a imagem/vídeo cobre toda a área exigida mas acaba cortando parte da imagem/vídeo. Outra forma que pode ser é "object-fit: none;", onde mantém a proporção original, ignorando todo dimensionado estabelecido. Por último, existe o "object-fit: scale-down;" que se consiste nas configurações do contain e do none e escolhe qual dessas configurações teria uma imagem menor para se basear.
 
-Propriedade object-position: Determina como a imagem/vídeo deve ser posicionada no elemento. Sem precisar escrever, já vem como padrão "object-position: 50% 50%";". Esses valores significam respectivamente o eixo x e o eixo y, ou seja, o 50% 50% quer dizer que a imagem está centralizada. Nesses valores é possível utilizar outras unidades de medidas como os pixels e inclusive colocar valores negativos. Além disso, existem palavras reservadas que facilitam no posicionamento do eixo x e y da imagem, tais como: right, left, center, top, bottom, start, end.
+Propriedade object-position: Determina como a imagem/vídeo deve ser posicionada no elemento. Sem precisar escrever, já vem como padrão object-position: 50% 50%";. Esses valores significam respectivamente o eixo x e o eixo y, ou seja, o 50% 50% quer dizer que a imagem está centralizada. Nesses valores é possível utilizar outras unidades de medidas como os pixels e inclusive colocar valores negativos. Além disso, existem palavras reservadas que facilitam no posicionamento do eixo x e y da imagem, tais como: right, left, center, top, bottom, start, end.
+
+--- MANIPULAÇÃO DE FUNDO DOS ELEMENTOS ---
+
+Alterando fundo de elementos - comandos:
+
+background-color: red; ---> altera fundo para cor vermelha
+background-image: url('caminho'); ---> define uma imagem como fundo e colocar mais de uma imagem utilizando esse comando por exemplo, background-image: url('caminho'), url('caminho');
+background-image: linear-gradient(red, blue); ---> define um degradê entre duas cores ou mais cores, nesse exemplo, começa com a primeira de cima pra baixo, no caso a vermelha e depois a última cor que é a azul.
+background-image: radial-gradient(red, blue); ---> define um degradê de forma radial/circular.
+background-image: repeting-linear-gradient(to top, red 0 20px, blue 20px 40px); ---> faixas de cores
+//Site de galeria de padrões para alterar fundo de elementos:
+https://projects.verou.me/css3patterns/
+
+Redimensionando fundo de elementos - comandos:
+
+background-size: auto; ---> sem escrever nada, isso é tamanho padrão
+background-size: cover; ---> corta parte da imagem ou estende ela pra cobrir todo o elemento
+background-size: contain; ---> coloca todo o conteúdo da imagem mesmo que sobre espaço, sem distorcer
+background-size: valor (porcentagem ou pixels); ---> único valor se refere a largura do elemento
+background-size: valor valor; ---> largura e altura
+background-size: contain, cover; ---> quando utiliza mais de uma imagem de fundo, por exemplo:
+background-image: url('caminhoUm'), url('caminhoDois'); // na imagem caminhoUm está sendo aplicado o valor contain, já na imagem caminhoDois está sendo aplicado o cover
+
+Repetição de imagem - comandos:
+
+background-repeat: repeat; ---> vai se repetir em todas as direções
+background-repeat: repeat-x; ---> vai se repetir horizontalmente
+background-repeat: repeat-y; ---> vai se repetir verticalmente
+background-repeat: space; ---> vai se repetir mas dando espaços iguais entre as imagens
+background-repeat: round; ---> vai se repetir de forma igual sem espaços e sem cortes
+background-repeat: no-repeat; ---> não vai se repetir
+background-repeat: no-repeat (eixo x) round (eixo y) ---> pode aplicar valores diferentes em eixos distintos
+
+
+
+
 ```
 
 
