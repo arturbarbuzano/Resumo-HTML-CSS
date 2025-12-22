@@ -363,6 +363,13 @@ color: hsl(0,100%,30%);
 HSLA: Extende do HSL, a única mudança é a transparência de cor que varia de 0.0 (máximo de transparência) até 1.0 (sem nível de transparência).
 
 color: hsla(0,100%,30%,0);
+
+--- IMAGENS ---
+
+Propriedade object-fit: Determina como a imagem/vídeo vai ser redimensionada para caber na caixa do elemento. Sem precisar escrever, já vem como padrão "object-fit: fill;". Nesse caso, a imagem ou vídeo pode acabar sendo distorciada de acordo com os valores estabelecidos de largura e altura. 
+Por isso, é interessante utilizar o "object-fit: contain;", pois mantém as proporções da imagem/vídeo, embora ocorra a possiblidade de não preencher todo o espaço. Um outro valor que existe é o "object-fit: cover;", no qual a imagem/vídeo cobre toda a área exigida mas acaba cortando parte da imagem/vídeo. Outra forma que pode ser é "object-fit: none;", onde mantém a proporção original, ignorando todo dimensionado estabelecido. Por último, existe o "object-fit: scale-down;" que se consiste nas configurações do contain e do none e escolhe qual dessas configurações teria uma imagem menor para se basear.
+
+Propriedade object-position: Determina como a imagem/vídeo deve ser posicionada no elemento. Sem precisar escrever, já vem como padrão "object-position: 50% 50%";". Esses valores significam respectivamente o eixo x e o eixo y, ou seja, o 50% 50% quer dizer que a imagem está centralizada. Nesses valores é possível utilizar outras unidades de medidas como os pixels e inclusive colocar valores negativos. Além disso, existem palavras reservadas que facilitam no posicionamento do eixo x e y da imagem, tais como: right, left, center, top, bottom, start, end.
 ```
 
 
