@@ -369,7 +369,7 @@ color: hsla(0,100%,30%,0);
 Propriedade object-fit: Determina como a imagem/vídeo vai ser redimensionada para caber na caixa do elemento. Sem precisar escrever, já vem como padrão "object-fit: fill;". Nesse caso, a imagem ou vídeo pode acabar sendo distorciada de acordo com os valores estabelecidos de largura e altura. 
 Por isso, é interessante utilizar o "object-fit: contain;", pois mantém as proporções da imagem/vídeo, embora ocorra a possiblidade de não preencher todo o espaço. Um outro valor que existe é o "object-fit: cover;", no qual a imagem/vídeo cobre toda a área exigida mas acaba cortando parte da imagem/vídeo. Outra forma que pode ser é "object-fit: none;", onde mantém a proporção original, ignorando todo dimensionado estabelecido. Por último, existe o "object-fit: scale-down;" que se consiste nas configurações do contain e do none e escolhe qual dessas configurações teria uma imagem menor para se basear.
 
-Propriedade object-position: Determina como a imagem/vídeo deve ser posicionada no elemento. Sem precisar escrever, já vem como padrão object-position: 50% 50%";. Esses valores significam respectivamente o eixo x e o eixo y, ou seja, o 50% 50% quer dizer que a imagem está centralizada. Nesses valores é possível utilizar outras unidades de medidas como os pixels e inclusive colocar valores negativos. Além disso, existem palavras reservadas que facilitam no posicionamento do eixo x e y da imagem, tais como: right, left, center, top, bottom, start, end.
+Propriedade object-position: Determina como a imagem/vídeo deve ser posicionada no elemento. Sem precisar escrever, já vem como padrão object-position: 50% 50%;. Esses valores significam respectivamente o eixo x e o eixo y, ou seja, o 50% 50% quer dizer que a imagem está centralizada. Nesses valores é possível utilizar outras unidades de medidas como os pixels e inclusive colocar valores negativos. Além disso, existem palavras reservadas que facilitam no posicionamento do eixo x e y da imagem, tais como: right, left, center, top, bottom, start, end.
 
 --- MANIPULAÇÃO DE FUNDO DOS ELEMENTOS ---
 
@@ -403,9 +403,36 @@ background-repeat: round; ---> vai se repetir de forma igual sem espaços e sem 
 background-repeat: no-repeat; ---> não vai se repetir
 background-repeat: no-repeat (eixo x) round (eixo y) ---> pode aplicar valores diferentes em eixos distintos
 
+Posicionamento das imagens - comando:
 
+background-position: pixels e/ou palavras reservadas (center, bottom, top, right, left); ---> posiciona conforme as palavras e pixels estabelecidos. Pode inclusive combinar as duas formas;
 
+Propriedades backgrounds
 
+background-attachment: fixed; ---> imagem fica fixa quando move elemento (texto com barra de rolagem) mas quando move página, ela se move junto
+background-attachment: scroll; ---> imagem fica fixa quando move elemento e quando move página
+background-attachment: local; ---> imagem fica fixa quando move página mas quando move elemento, ela se move junto
+
+background-origin: padding-box; ---> define ponto de origem da imagem no canto superior esquerdo no espaçamento interno que é o padding, vai ocupar a área onde padding ocupa somente
+background-origin: border-box; ---> define ponto de origem da imagem no canto superior esquerdo e cobre a área da borda do elemento
+background-origin: content-box; ---> define ponto de origem da imagem no canto superior esquerdo mas só cobre a área do conteúdo do elemento, sem cobrir borda ou padding;
+
+background-clip: padding-box; ---> preenche somente área do espaçamento interno padding, propriedade parecida com background origin, mas se difere pois é possível atuar com fundo do elemento cor sólida e não só com imagem
+background-clip: border-box; ---> preenche somente área da borda do elemento
+background-clip: content-box; ---> preenche só área do conteúdo do elemento
+
+background-clip: text; ---> preenche área do texto do elemento, segue a configuração necessária:
+  -webkit-background-clip: text; ---> isso necessita para a compreensão do Chrome
+  color: transparent; ---> cor precisa estar transparente para funcionar o efeito
+  background-clip: text;  ---> efeito
+
+background-blend-mode: multiply; ---> mescla dois fundos diferentes, por exemplo background-color: blue com background-image: url('caminho'), ou seja, a imagem de fundo vai ter a cor azul; Valores que podem ser aplicados: multiply, darken, overlay, lighten, color-burn, color-dodge, hard-light, difference, color, luminosity, soft-light, saturation, hue, exclusion
+
+Propriedade background é um conjunto de todas as propriedades vistas de background. É possível colocar os valores de todas das propriedades numa única propriedade que é background. A estrutura é:
+
+background: image / position / size / repeat / attachment / origin / clip / color
+
+Exemplo: background: url('caminho') / top center / 200px 200px / no-repeat / scroll / padding-box / content-box / red
 ```
 
 
