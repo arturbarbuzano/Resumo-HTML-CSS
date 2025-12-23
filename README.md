@@ -433,6 +433,71 @@ Propriedade background é um conjunto de todas as propriedades vistas de backgro
 background: image / position / size / repeat / attachment / origin / clip / color
 
 Exemplo: background: url('caminho') / top center / 200px 200px / no-repeat / scroll / padding-box / content-box / red
+
+Obs: Caso não coloque um valor de uma propriedade, vai ser definido um valor padrão.
+
+--- BORDAS ---
+
+Tamanho da borda - comandos:
+
+border-width: valor(pixels ou thin, medium, thick);
+
+Obs: É possível adicionar mais de um valor como border-width: 1px 3px;
+
+Estilo da borda - comandos:
+
+border-style: valor(solid, dashed, dotted, double, groove, ridge, inset, outset)
+
+Obs: É possível adicionar mais de um valor como border-style: dashed solid double groove;
+
+Cor da borda - comandos:
+
+border-color: red;
+
+Obs: É possível adicionar mais de um valor como border-color: red green blue;
+
+Propriedade Border é um conjunto de todas as propriedades vistas de border. É possível colocar os valores de todas das propriedades numa única propriedade que é border. A estrutura é:
+
+border: width style color;
+
+Exemplo: border: 3px solid rgb(0,0,255);
+
+Obs: Caso não coloque um valor de uma propriedade, vai ser definido um valor padrão. Além disso, existem formas derivadas que se referem a cada lado da borda que são: border-bottom, border-top, border-right, border-left. Funcionam da mesma forma que todas as outras propriedades de borda, inclusive a border, por exemplo:
+
+border-bottom-style: dashed;
+border-top-width: thin;
+border-right-color: purple;
+border-left: 1px dotted rgba(0,255,0,1);
+
+Arredondamento da Borda - comandos:
+
+border-radius: 10px;
+border-radius: 50px/100px; ---> vira um formato oval
+border-radius: 50%; ---> vira um círculo
+
+Obs: É possível adicionar mais de um valor como border-radius: 10px 20px 30px 40px;
+
+Borda com Imagens - comandos:
+
+border-image-source: url('caminho'); ---> adicionando imagem
+border-image-source: linear-gradient(red, blue); --> adiciona degradê
+border-image-slice: valor (número não pixels); ---> utiliza para preencher toda a borda em volta do elemento, pode ser utilizado junto com border-image-repeat: repeat principalmente para imagens.
+border-image-width: valor; ---> É possível adicionar mais de um valor como border-image-width: 10px 20px;
+border-image-repeat: valor (repeat, stretch, round, space); ---> É possível adicionar mais de um valor como border-image-repeat: round (horizontal) space (vertical);
+border-image-outset: valor; ---> define distância entre a borda e o elemento, é possível adicionar mais de um valor como border-image-outset: 10px 20px 30px;
+
+Propriedade Border-Image é um conjunto de todas as propriedades vistas de border. É possível colocar os valores de todas das propriedades numa única propriedade que é border-image. A estrutura é:
+
+border-image: source slice / width / outset round
+
+Exemplo: border-image: url('caminho') 169 / 10px / 1 round
+
+Obs: Caso não coloque um valor de uma propriedade, vai ser definido um valor padrão.
+
+
+
+
+
 ```
 
 
