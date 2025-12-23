@@ -494,10 +494,24 @@ Exemplo: border-image: url('caminho') 169 / 10px / 1 round
 
 Obs: Caso não coloque um valor de uma propriedade, vai ser definido um valor padrão.
 
+--- FONTES ---
 
+Fontes: https://fonts.google.com/
 
+Famílias de fonte: sans-serif, cursive, monospace, fantasy etc.
 
+* {
+  font-family: sans-serif; // Propriedade que determina a fonte do texto na qual é possível 
+  // colocar o nome da família ou da fonte específica, nesse caso se trata da família sans-serif; 
+}
 
+Obs: Quando o nome da família ou da fonte específica tiver mais de uma palavra, é bom colocar entre aspas no começo e fim dela.
+
+* {
+  font-family: Arial, "Times New Roman"; // tem dois tipos de fontes separadas entre um vírgula, isso 
+  // quer dizer que se não estiver reconhecendo a fonte Arial, o navegador colocará a fonte Times New 
+  // Roman
+}
 ```
 
 
