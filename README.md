@@ -513,6 +513,99 @@ Obs: Quando o nome da família ou da fonte específica tiver mais de uma palavra
   // Roman
 }
 
+Fontes Personalizadas
+
+@font-face é utilizado quando a fonte não está instalada no sistema operacional do usuário e do desenvolvedor e se deseja utilizar uma fonte personalizada.
+
+Exemplo:
+
+@fonte-face {
+  font-family: Roboto;
+  src: local(), url('caminho');
+}
+
+p {
+  font-family: Roboto;
+}
+
+Obs: local() significa que vai procurar a fonte na máquina do usuário, se não tiver instalada ele busca a url('caminho').
+
+@import é uma outra forma de fonte personalizada na qual se importa uma folha de estilo para dentro do projeto, essa maneira é bastante utilizada na hora de importar do Google fonts, mas também pode-se importar suas próprias folhas de estilos criadas dentro de outras folhas de estilos.
+
+Exemplo:
+
+// Arquivo CSS chamado global.css
+
+@import url('caminho');
+
+* {
+  font-family: Roboto;
+}
+
+// Arquivo CSS chamado style.css
+
+@import url('/static/global.css'); //  aqui ocorre uma importação da folha de estilo global criada pelo
+// dev para dentro desse arquivo CSS. Com isso, essa folha de estilo possue as características da folha importada, nesse caso a font-family: Roboto.
+
+p {
+  font-weight: bold;
+}
+
+Font-Size: Propriedade para determinar o tamanho da fonte do texto.
+
+Exemplo:
+
+font-size: valor ou (palavras reservadas como: xx-small, x-small, medium, large, x-large, xx-large);
+
+Além disso, existem palavras reservadas que são utilizadas quando há um padrão de comparação.
+
+Exemplo: 
+
+div {
+  font-size: 20px;
+}
+
+div p {
+  font-size: smaller ou larger; // Nesse caso, pode ser menor ou maior que o tamanho da fonte da div "pai", ou seja, é um tamanho relativo pois depende de outro elemento.
+}
+
+Font-Style: Propriedade que determina estilo da fonte do texto.
+
+font-style: normal, italic ou oblique;
+
+Font-Weight: Define qual a espessura que a fonte deve ter.
+
+fonte-weight: valor (não é pixels, são números que variam de 100 até 900) ou (palavras reservadas como normal e bold);
+
+Além disso, existem palavras reservadas que são utilizadas quando há um padrão de comparação.
+
+div {
+  font-weight: normal;
+}
+
+div p {
+  font-weight: lighter ou bolder; // Nesse caso, pode ser mais fina ou mais grossa que a largura da fonte da div "pai", ou seja, é um tamanho relativo pois depende de outro elemento.
+}
+
+Font-Variant: Define se o texto deve ser exibido em formato versalete (small caps). Em outras palavras, o texto fica em maiúsculo mas o texto fica menor do que se estivesse somente em maíusculo normal.
+
+font-variant: normal ou small-caps;
+
+Font-Stretch: Define o quanto o texto será alongado.
+
+font-stretch: ultra-condensed, extra-condensed, semi-condensed, normal, semi-expanded, expanded, extra-expanded ou ultra-expanded;
+
+Line-Height: Especifica o espaçamento em cima e abaixo de cada linha do texto.
+
+line-height: valor (não é em pixels e 1.2 é geralmente padrão) ou porcentagem;
+
+Propriedade Font é um conjunto de todas as propriedades vistas de font. É possível colocar os valores de todas das propriedades numa única propriedade que é font. A estrutura é:
+
+font: style variant weight size/line-height family
+
+Exemplo:
+
+font: italic small-caps bold 24px/2 Georgia, serif;
 ```
 
 
