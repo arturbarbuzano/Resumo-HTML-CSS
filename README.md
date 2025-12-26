@@ -678,8 +678,63 @@ Word-Spacing: Adiciona um espaçamento entre cada palavra do seu texto.
 
 word-spacing: normal (valor padrão) ou por exemplo 20px;
 
+White-Spacing: Define como os espaços em branco do texto de um determinado elemento é tratado.
 
+white-spacing: normal (valor padrão), nowrap, pre, pre-line, pre-wrap, break-spaces; 
 
+Word-Wrap: Define se a palavra deve ser quebrada ou não para caber em um elemento;
+
+word-wrap: normal (valor padrão) ou break-word;
+
+Word-Break: Define quando o texto deve ter quebra de linha. Se difere do word-wrap, pois o word-wrap quebra linha antes de iniciar a próxima palavra que não cabe, já essa propriedade não.
+
+word-break: normal (valor padrão que quebra linha quando tem quebra de linha normal com tag br ou se tem hífen), break-all ou keep-all;
+
+Writing-mode: Define orientação do texto (vertical ou horizontal). Propriedade bastante utilizada em outros idiomas que se leem textos por outras direções.
+
+writing-mode: horizontal-tb (valor padrão), vertical-rl ou vertical-lr;
+
+Text-Overflow: Defini que existe mais conteúdo de texto do que o usuário pode enxergar no momento.
+
+text-overflow: clip (valor padrão), ellipsis ou string;
+
+--- SOMBRAS ---
+
+Box-Shadow: Defini sombras nos elementos.
+
+box-shadow: inset (sombra interna) 10px (horizontal) 30px (vertical) 5px (desfoque) 7px (propagação da sombra) blue (cor), 10px (horizontal) 30px (vertical) 5px (desfoque) 7px (propagação da sombra) purple (cor); ---> a vírgula está separando a sombra interna com a sobre externa definida
+
+Drop-shadow: Defini sombra em imagens sem fundo. Também funciona em textos.
+
+filter: drop-shadow(10px (horizontal) 10px (vertical) 5px (desfoque) gray (cor));
+
+Text-Shadow: Defini sombras em textos. Não existe inset igual o box-shadow. Funciona igual o drop-shadow, mas é específico para textos.
+
+text-shadow: 10px (horizontal) 20px (vertical) 7px (desfoque) green (cor);
+
+--- OUTROS ---
+
+Opacity: Defini a transparência de um elemento. Varia de 0 a 1 onde 0 é totalmente transparente e 1 é normal.
+
+opacity: 0.5; --> 50% transparente
+
+Overflow: Controla como conteúdo deve ser exibido dentro do elemento caso ultrapasse os limites do container/elemento. Essa propriedade só funciona quando determina uma altura.
+
+overflow: visible (valor padrão), hidden, scroll ou auto;
+overflow-x: visible (valor padrão), hidden, scroll ou auto; ---> variação da propriedade overflow focada no eixo x
+overflow-y: visible (valor padrão), hidden, scroll ou auto; ---> variação da propriedade overflow focada no eixo y
+
+Reset CSS: Não é uma propriedade e sim uma folha de estilo capaz de sobrepor todas as propriedades do CSS que os navegadores colocam por padrão. Isso ajuda com que os sites tenham o mesmo design em todos os navegadores. Existe um arquivo criado por Meyer que é capaz disso. Além disso, é possível fazer dessa maneira:
+
+*{
+  padding: 0;
+  margin: 0;
+  vertical-align: base-line;
+  list-style: none;
+  border: 0;
+}
+
+// Com isso, é só realizar o @import desse conteúdo para a sua folha de estilo principal
 ```
 
 
