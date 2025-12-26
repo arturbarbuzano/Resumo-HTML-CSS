@@ -428,6 +428,7 @@ background-clip: text; ---> preenche área do texto do elemento, segue a configu
 
 background-blend-mode: multiply; ---> mescla dois fundos diferentes, por exemplo background-color: blue com background-image: url('caminho'), ou seja, a imagem de fundo vai ter a cor azul; Valores que podem ser aplicados: multiply, darken, overlay, lighten, color-burn, color-dodge, hard-light, difference, color, luminosity, soft-light, saturation, hue, exclusion
 
+------------------------------------------------------------------------------------------------------------------------------------------------
 Propriedade background é um conjunto de todas as propriedades vistas de background. É possível colocar os valores de todas das propriedades numa única propriedade que é background. A estrutura é:
 
 background: image / position / size / repeat / attachment / origin / clip / color
@@ -435,6 +436,7 @@ background: image / position / size / repeat / attachment / origin / clip / colo
 Exemplo: background: url('caminho') / top center / 200px 200px / no-repeat / scroll / padding-box / content-box / red
 
 Obs: Caso não coloque um valor de uma propriedade, vai ser definido um valor padrão.
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 --- BORDAS ---
 
@@ -456,6 +458,7 @@ border-color: red;
 
 Obs: É possível adicionar mais de um valor como border-color: red green blue;
 
+------------------------------------------------------------------------------------------------------------------------------------------------
 Propriedade Border é um conjunto de todas as propriedades vistas de border. É possível colocar os valores de todas das propriedades numa única propriedade que é border. A estrutura é:
 
 border: width style color;
@@ -468,6 +471,7 @@ border-bottom-style: dashed;
 border-top-width: thin;
 border-right-color: purple;
 border-left: 1px dotted rgba(0,255,0,1);
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 Arredondamento da Borda - comandos:
 
@@ -486,6 +490,7 @@ border-image-width: valor; ---> É possível adicionar mais de um valor como bor
 border-image-repeat: valor (repeat, stretch, round, space); ---> É possível adicionar mais de um valor como border-image-repeat: round (horizontal) space (vertical);
 border-image-outset: valor; ---> define distância entre a borda e o elemento, é possível adicionar mais de um valor como border-image-outset: 10px 20px 30px;
 
+------------------------------------------------------------------------------------------------------------------------------------------------
 Propriedade Border-Image é um conjunto de todas as propriedades vistas de border. É possível colocar os valores de todas das propriedades numa única propriedade que é border-image. A estrutura é:
 
 border-image: source slice / width / outset round
@@ -493,6 +498,7 @@ border-image: source slice / width / outset round
 Exemplo: border-image: url('caminho') 169 / 10px / 1 round
 
 Obs: Caso não coloque um valor de uma propriedade, vai ser definido um valor padrão.
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 --- FONTES ---
 
@@ -599,6 +605,7 @@ Line-Height: Especifica o espaçamento em cima e abaixo de cada linha do texto.
 
 line-height: valor (não é em pixels e 1.2 é geralmente padrão) ou porcentagem;
 
+------------------------------------------------------------------------------------------------------------------------------------------------
 Propriedade Font é um conjunto de todas as propriedades vistas de font. É possível colocar os valores de todas das propriedades numa única propriedade que é font. A estrutura é:
 
 font: style variant weight size/line-height family
@@ -606,6 +613,73 @@ font: style variant weight size/line-height family
 Exemplo:
 
 font: italic small-caps bold 24px/2 Georgia, serif;
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+--- TEXTOS ---
+
+Text-Transform: Defini quais caracteres vão estar em maiúsculo, minúsculo etc.
+
+text-transform: none (padrão);
+text-transform: capitalize; ---> palavras ficam com a primeira letra em maiúscula
+text-transform: uppercase; ---> transforma todas as letras em maiúsculas
+text-transform:: lowercase; ---> transforma todas as letras em minúsculas
+text-transform: initial; ---> valor padrão, é igual ao none
+text-transform: inherit; ---> herda o valor definido do elemento pai
+
+Text-Align: Alinha o texto do elemento.
+
+text-align: left; ---> valor padrão do texto alinhado à esquerda
+text-align: right; ---> texto alinhado à direita
+text-align: center; ---> texto centralizado 
+text-align: justify; ---> texto justificado
+
+Text-Decoration-Line: Adiciona ou remove linhas que podem estar em cima, embaixo e no meio do texto.
+
+text-decoration-line: none (padrão);
+text-decoration-line: line-through; ---> adiciona linha no meio, risca o texto
+text-decoration-line: overline; ---> adiciona linha em cima do texto
+text-decoration-line: underline; ---> adiciona linha embaixo do texto
+
+Text-Decoration-Style: Determina estilo da linha do texto.
+
+text-decoration-style: solid; ---> linha sólida
+text-decoration-style: dashed; ---> linha tracejada
+text-decoration-style: dotted; ---> linha pontilhada
+text-decoration-style: wavy; ---> linha ondulada
+
+Text-Decoration-Color: Determina a cor da linha do texto.
+
+text-decoration-color: red;
+
+Text-Decoration-Thickness: Determina a espessura da linha do texto
+
+text-decoration-thickness: 20px;
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+Propriedade Text-Decoration é um conjunto de todas as propriedades vistas de text-decoration. É possível colocar os valores de todas das propriedades numa única propriedade que é text-decoration. A estrutura é:
+
+text-decoration: line style color thickness
+
+Exemplo:
+
+text-decoration: underline solid blue 5px
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Text-Indent: Defini recuo de linha. Bastante usado pra início de parágrafo.
+
+text-indent: 10px;
+
+Letter-Spacing: Adiciona um espaçamento entre cada caractere do seu texto. Como o nome já diz, espaçamento entre letras.
+
+letter-spacing: normal (valor padrão) ou por exemplo 10px;
+
+Word-Spacing: Adiciona um espaçamento entre cada palavra do seu texto.
+
+word-spacing: normal (valor padrão) ou por exemplo 20px;
+
+
+
 ```
 
 
