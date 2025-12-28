@@ -291,7 +291,15 @@ Obs: É possível utilizar todos os conceitos de seletores, agrupamento e combin
 Unidades de Medida Absolutas: Não dependem de nenhum outro valor de referência.
 Ex: cm, mm, Q, in, pc, pt e px.
 
-Unidades de Medida Relativas: Dependem de outro valor de referência, o que faz com que o resultado possa variar de acordo com o valor da propriedade do elemento que se baseia. Ex: %, em (se basea no valor do font-size do elemento pai ou do mesmo elemento só que usa outra propriedade), rem (parecido com em, mas se basea somente no valor do font-size da tag html que é 16px), vw e vh.
+Unidades de Medida Relativas: Dependem de outro valor de referência, o que faz com que o resultado possa variar de acordo com o valor da propriedade do elemento que se baseia. Ex: % (se baseia no elemento pai da mesma propriedade), em (se baseia no valor do font-size do elemento pai ou do mesmo elemento só que usa outra propriedade), rem (parecido com em, mas se baseia somente no valor do font-size da tag html que é 16px), vw (tamanho da largura da área visível da página web variando de dispositivo para dispositivo, 1vm = 1% do tamanho da largura por exemplo) e vh (tamanho da altura da área visível da página web variando de dispositivo para dispositivo, 2vh = 2% do tamanho da altura por exemplo).
+
+Função Calc: realiza o cálculo de valores que podem ser de unidades de medidas diferentes. A estrutura é:
+
+calc(valor + valor);
+
+Exemplo:
+
+width: calc(10px + 25%);
 
 Largura = width: valor; <br>
 Largura Mínima = min-width: valor; <br>
