@@ -286,7 +286,12 @@ div ~ p {
 Obs: É possível utilizar todos os conceitos de seletores, agrupamento e combinadores juntos, basta utilizar a criatividade em seus projetos!
 ```
 
-### Dimensionamento e Espaçamento
+### Unidades de Medida, Dimensionamento e Espaçamento
+
+Unidades de Medida Absolutas: Não dependem de nenhum outro valor de referência.
+Ex: cm, mm, Q, in, pc, pt e px.
+
+Unidades de Medida Relativas: Dependem de outro valor de referência, o que faz com que o resultado possa variar de acordo com o valor da propriedade do elemento que se baseia. Ex: %, em (se basea no valor do font-size do elemento pai ou do mesmo elemento só que usa outra propriedade), rem (parecido com em, mas se basea somente no valor do font-size da tag html que é 16px), vw e vh.
 
 Largura = width: valor; <br>
 Largura Mínima = min-width: valor; <br>
