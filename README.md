@@ -772,7 +772,57 @@ position: sticky; ---> sem comporta igual relative, mas quando rola página, ele
 z-index: 0 (valor padrão, o último elemento ficará em cima), 1 (o primeiro elemento declarado ficará em cima);  ---> determina a ordem de qual elemento ficará em cima do outro. Funciona com todas as outras propriedades position, menos com a position valor static.
 ```
 
+### Flexbox
 
+Flexbox é um modelo de layout que possue várias propriedades nas quais permitem posicionar os elementos dentro de outro elemento (container) de forma flexível e adaptável. Os elementos dentro do container são conhecidos como itens.
+
+```sh
+// No documento HTML
+
+<div class="container"> 
+  <div class="item"> 
+    Item 1
+  </div>
+  <div class="item"> 
+    Item 2
+  </div>
+</div>
+
+// No documento CSS
+
+.container {
+  background-color: red;
+  padding: 20px;
+  display: flex; ---> os itens ficarão um ao lado do outro e o container ocupa toda a linha, mas se for inline-flex o container ocupa só o espaço necessário na linha.
+}
+
+.item {
+  background-color: blue;
+  margin: 10px;
+}
+
+Flexbox possui dois eixos: eixo principal que define como o container vai se organizar, se é em linha ou coluna e o eixo transversal que é perpendicular ao eixo principal. Uma propriedade que determina o eixo principal é o flex-direction.
+
+```sh
+.container {
+
+  flex-direction: row, row-reverse, column ou column-reverse;
+
+}
+
+Flex-Wrap: Por padrão, os flex items vão todos tentar se encaixar em uma só linha. Com a propriedade flex-wrap, é possível modificar esse comportamento e permitir que os itens quebrem para uma linha seguinte conforme for necessário a fim de caber no container.
+
+.container {
+
+  flex-wrap: nowrap (padrão), wrap ou wrap-reverse;
+
+}
+
+Flex-flow: propriedade que junta as funções da flex-direction e flex-wrap.
+
+.container {
+    flex-flow: row nowrap, row wrap, column nowrap ou column wrap;
+  }
 
 
 
