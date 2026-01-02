@@ -749,9 +749,28 @@ Reset CSS: Não é uma propriedade e sim uma folha de estilo capaz de sobrepor t
 
 // Com isso, é só realizar o @import desse conteúdo para a sua folha de estilo principal
 ```
+### Posicionamento e Exibição dos Elementos
 
+Propriedade Display é uma propriedade que determina como o elemento se comportará no momento que for exibido na tela.
 
+```sh
+display: block; ---> o valor block quer dizer que o elemento se comportará como um bloco, ou seja,preenche toda a linha e pula pra próxima linha, exemplo de tags que fazem isso são as tags div, p, ul. 
+display: inline; ---> o valor inline quer dizer que o elemento vai ser exibido na mesma linha do outro elemento, exemplo de tags que fazem isso são as tags span, em e b. Height e Width não funcionam nesse caso, Margin e Padding funcionam somente dos lados, não em cima e embaixo. Uma tag que vem por padrão inline pode se tornar block e uma tag que vem por padrão block pode se tornar inline.
+display: inline-block; --> parecido com o valor inline, mas o valor inline-block possibilita definir Height e Width dos elementos, Margin e Padding funcionam em cima, embaixo e dos lados. Um exemplo interessante é aplicar isso num menu de navegação onde terá: .menu ul li { display: inline-block; padding: 20px 40px;}
+display: none; ---> o valor none quer dizer que vai esconder todo o elemento inclusive elementos filhos desse elemento. É diferente da propriedade visibility: hidden, pois o hidden mantém o espaço do elemento diferente do display none.
+vertical-align: bottom, top, middle, etc; ---> propriedade que alinha verticalmente os elementos que estão lado a lado.
+```
 
+Propriedade Position é uma propriedade que ajuda a manipular a localização/posição do elemento na página.
+
+```sh
+position: static; ---> valor padrão, segue a sequência de escrita dos elementos do documento HTML.
+position: relative; ---> destrava propriedades que são utilizadas em conjunto, que são top: valor, bottom: valor, left: valor e right: valor.
+position: absolute; ---> parecido com relative, usa as mesmas propriedades em conjunto mas a diferença é que os elementos em volta não enxergam o elemento que possue o valor absolute, eles ocupam o espaço dele. Usado em conjunto com relative quando elemento filho é absolute e precisa posicionar ele dentro do elemento pai, logo o elemento pai vira relative. Usado bastante quando é necessário colocar um texto em cima de uma imagem.
+position: fixed; ---> elemento fica fixo, sempre na mesma posição mesmo rolando a página. Pode utilizar também top, bottom, left e right como propriedades em conjunto. Usa bastante em chats de suporte ao cliente e em menus.
+position: sticky; ---> sem comporta igual relative, mas quando rola página, ele fica fixo. Obrigatório utilizar top, bottom, left ou right como propriedades em conjunto para ter efeito.
+z-index: 0 (valor padrão, o último elemento ficará em cima), 1 (o primeiro elemento declarado ficará em cima);  ---> determina a ordem de qual elemento ficará em cima do outro. Funciona com todas as outras propriedades position, menos com a position valor static.
+```
 
 
 
