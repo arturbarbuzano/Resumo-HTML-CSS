@@ -805,7 +805,7 @@ Flexbox possui dois eixos: eixo principal que define como o container vai se org
 
 ```sh
 .container {
-
+  display: flex;
   flex-direction: row, row-reverse, column ou column-reverse;
 
 }
@@ -813,7 +813,7 @@ Flexbox possui dois eixos: eixo principal que define como o container vai se org
 Flex-Wrap: Por padrão, os flex items vão todos tentar se encaixar em uma só linha. Com a propriedade flex-wrap, é possível modificar esse comportamento e permitir que os itens quebrem para uma linha seguinte conforme for necessário a fim de caber no container.
 
 .container {
-
+  display: flex;
   flex-wrap: nowrap (padrão), wrap ou wrap-reverse;
 
 }
@@ -821,8 +821,96 @@ Flex-Wrap: Por padrão, os flex items vão todos tentar se encaixar em uma só l
 Flex-flow: propriedade que junta as funções da flex-direction e flex-wrap.
 
 .container {
-    flex-flow: row nowrap, row wrap, column nowrap ou column wrap;
+  display: flex;
+  flex-flow: row nowrap, row wrap, column nowrap ou column wrap;
   }
+
+Justify-Content: Alinha os itens no eixo principal.
+
+.container {
+  display: flex;
+  justify-content: flex-start, flex-end, center, space-between, space-around ou space-evenly;
+}
+
+Align-Items: Alinhas os itens no eixo transversal.
+
+.container {
+  display: flex;
+  align-items: flex-start, flex-end, center, stretch (padrão) ou baseline;
+}
+
+Align-Content: Alinha as linhas de flex quando há espaço extra no eixo transversal
+
+.container {
+  display: flex;
+  align-content: normal (valor padrão), flex-start, flex-end, center, space-between ou space-around; 
+}
+
+Gap: Controla o espaçamento entre os itens do container. Mexe com o espaçamento de linha e coluna.
+
+.container {
+  gap: 10px (linha) 20px (coluna);
+  gap: 30px (linha e coluna);
+}
+
+Order: Altera a ordem dos itens do container. Propriedade do flex item.
+
+.item{ 
+  order: 0 (valor padrão);
+}
+
+Obs: se quiser um item que esteja na frente do último que foi colocado, então:
+
+.item04{
+  order: -1; --> como -1 vem antes de 0, então o item04 vai vim antes do último item colocado.
+}
+
+Flex-Grow: Faz com que os itens preencham os espaços extras do container, com isso os itens podem crescer ao longo do eixo principal. Propriedade do flex item.
+
+.item{
+  flex-grow: 1 ou 2;
+}
+
+Flex-Shrink: Controla o quanto que o item vai diminuir no container caso seja necessário. Se o container não possui espaço suficiente para acomodar os elementos, eles irão diminuir para caber. Propriedade do flex item.
+
+.item{
+  flex-shrink: 1 (valor padrão), 0, 2; --> quanto maior o número, mais o item será diminuído.
+}
+
+Flex-Basis: Define o tamanho inicial dos itens antes que o espaço de sobra seja redistribuído no container. Propriedade do flex item.
+
+.item{
+  flex-basis: auto, 0, 100px, 50%;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+Propriedade flex é um conjunto de das propriedades flex-grow, flew-shrink e flex-basis de flex. É possível colocar os valores dessas propriedades numa única propriedade que é flex. Propriedade do flex item. A estrutura é:
+
+flex: grow shrink basis; 
+
+Exemplos: 
+
+flex: 1 1 auto; ---> é igual a flex: auto
+flex: initial; ---> é igual a flex: 0 1 auto
+flex: 1; ---> é igual a flex: 1 0 0, quando é só um único valor passando, só altera o grow;
+flex: 20px; ---> é igual a flex: 1 1 20, quando é só um único valor em pixel passando, só altera o basis;
+
+Obs: Caso não coloque um valor de uma propriedade, vai ser definido um valor padrão.
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Align-Self: Permite sobrescrever o alinhamento padrão aplicado pela propriedade align-items, mas diferente do align-items, o flex-align será realizado de forma individual pois é propriedade do flex item.
+
+.item{
+  align-self: flex-start, flex-end, center ou stretch;
+}
+
+Materiais de Estudo de Flexbox:
+  -Flexbox Froggy;
+  -A Complete Guide to Flexbox;
+  -Flexbox - Guia Completo Origamid;
+  -Conceitos Básicos de Flexbox Mdn web docs;
+  -Learn CSS - Flexbox web.dev;
+```
 
 
 
