@@ -803,7 +803,6 @@ Flexbox é um modelo de layout que possue várias propriedades nas quais permite
 
 Flexbox possui dois eixos: eixo principal que define como o container vai se organizar, se é em linha ou coluna e o eixo transversal que é perpendicular ao eixo principal. Uma propriedade que determina o eixo principal é o flex-direction.
 
-```sh
 .container {
   display: flex;
   flex-direction: row, row-reverse, column ou column-reverse;
@@ -839,7 +838,7 @@ Align-Items: Alinhas os itens no eixo transversal.
   align-items: flex-start, flex-end, center, stretch (padrão) ou baseline;
 }
 
-Align-Content: Alinha as linhas de flex quando há espaço extra no eixo transversal
+Align-Content: Alinha as linhas de flex quando há espaço extra no eixo transversal.
 
 .container {
   display: flex;
@@ -891,8 +890,8 @@ flex: grow shrink basis;
 Exemplos: 
 
 flex: 1 1 auto; ---> é igual a flex: auto
-flex: initial; ---> é igual a flex: 0 1 auto
-flex: 1; ---> é igual a flex: 1 0 0, quando é só um único valor passando, só altera o grow;
+flex: initial (valor padrão); ---> é igual a flex: 0 1 auto
+flex: 1; ---> é igual a flex: 1 0 0, quando é só um único valor passando, só altera o grow mas os itens poderão crescer ou diminuir de acordo com o espaço disponível no container;
 flex: 20px; ---> é igual a flex: 1 1 20, quando é só um único valor em pixel passando, só altera o basis;
 
 Obs: Caso não coloque um valor de uma propriedade, vai ser definido um valor padrão.
