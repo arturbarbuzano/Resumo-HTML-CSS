@@ -838,7 +838,7 @@ Align-Items: Alinhas os itens no eixo transversal.
   align-items: flex-start, flex-end, center, stretch (padrão) ou baseline;
 }
 
-Align-Content: Alinha as linhas de flex quando há espaço extra no eixo transversal.
+Align-Content: Alinha as linhas de flex quando há espaço extra no eixo transversal. Determina o espaçamento entre as linhas enquanto o align-items determina como os itens, como um todo, são alinhados dentro do container. Quando há apenas uma linha, o align-content não tem efeito.
 
 .container {
   display: flex;
