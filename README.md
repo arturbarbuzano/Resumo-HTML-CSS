@@ -910,10 +910,35 @@ Materiais de Estudo de Flexbox:
   -Conceitos Básicos de Flexbox Mdn web docs;
   -Learn CSS - Flexbox web.dev;
 ```
+### Grid
 
+Grid é um recurso que permite construir layouts baseados em grades bidimensionais, dividindo a página em regiões e definindo onde cada elemento deve ficar. Diferente do Flexbox onde só era possível trabalhar com coluna ou linha por vez, o Grid possibilita trabalhar com coluna e linha no mesmo container. É possível trabalhar com os dois modelos de layouts juntos no mesmo projeto.
 
+```sh
+// No documento HTML
 
+<div class="container"> 
+  <div class="item"> 
+    Item 1
+  </div>
+  <div class="item"> 
+    Item 2
+  </div>
+</div>
 
+// No documento CSS
+
+.container {
+  background-color: red;
+  padding: 20px;
+  display: grid; ---> coloca os elementos um embaixo do outro e ocupa toda a linha, mas se for inline-grid, os elementos que são irmãos desse container vão ficar em linha e ocupar somente o espaço necessário.
+}
+
+.item {
+  background-color: blue;
+  margin: 10px;
+}
+```
 
 
 
