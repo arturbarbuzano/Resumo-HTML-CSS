@@ -997,6 +997,7 @@ Função repeat: Repete para todas ou para algumas das faixas, o mesmo valor par
 
 .container {
   grid-template-columns: auto-fit, auto-fill, min-content, max-content, auto;
+  
 ```
 
 
