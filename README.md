@@ -938,7 +938,67 @@ Grid é um recurso que permite construir layouts baseados em grades bidimensiona
   background-color: blue;
   margin: 10px;
 }
+
+Grid-Template-Rows: Define as linhas do grid;
+
+Grid-Template-Columns: Define as colunas do grid;
+
+Exemplo: 
+
+.container {
+  background-color: red;
+  padding: 20px;
+  display: grid; 
+  grid-template-columns: 50% 300px 100px; ---> quer dizer que vão ter 3 colunas cada uma com valores diferentes 
+  grid-template-rows: 1fr 2fr; ---> isso quer dizer que vão ter 2 linhas cada uma com valores diferentes, fr representa uma fração de espaço disponível no container do grid.
+}
+
+.item {
+  border: 1px solid black;
+}
+
+.item-01 {
+  background: blue;
+}
+
+.item-02 {
+  background: green;
+}
+
+.item-03 {
+  background: yellow;
+}
+
+Função repeat: Repete para todas ou para algumas das faixas, o mesmo valor para seu tamanho de coluna e linha.
+
+// Antes
+
+.container {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+// Depois
+
+.container {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+// Outros exemplos
+
+.container {
+  grid-template-columns: 100px repeat(3, 1fr); ---> é possível combinar com outros valores
+}
+
+.container {
+  grid-template-columns: 100px repeat(3, 200px 100px); ---> é possível fazer uma sequência de repetições e pode utilizar outras unidades de medida
+}
+
+// Outros valores
+
+.container {
+  grid-template-columns: auto-fit, auto-fill, min-content, max-content, auto;
 ```
+
 
 
 
