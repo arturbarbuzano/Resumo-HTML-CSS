@@ -997,7 +997,13 @@ Função repeat: Repete para todas ou para algumas das faixas, o mesmo valor par
 
 .container {
   grid-template-columns: auto-fit, auto-fill, min-content, max-content, auto;
-  
+}
+
+Obs: Se a quantidade de itens dentro do container for maior que o número de linhas e colunas propostos, os itens em excesso se organizam em novas linhas ou novas colunas de forma automática. Com isso, utiliza o grid-auto-rows: valor ou grid-auto-columns: valor.
+
+Propriedade grid-auto-flow: Controla como o algoritmo de reposicionamento automático irá se comportar, ou seja, os itens em excesso se organizam em novas linhas mas também podem se organizar em novas colunas com essa propriedade.
+
+grid-auto-flow: row (valor padrão), column, dense;
 ```
 
 
