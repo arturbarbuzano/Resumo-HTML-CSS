@@ -1004,6 +1004,244 @@ Obs: Se a quantidade de itens dentro do container for maior que o número de lin
 Propriedade grid-auto-flow: Controla como o algoritmo de reposicionamento automático irá se comportar, ou seja, os itens em excesso se organizam em novas linhas mas também podem se organizar em novas colunas com essa propriedade.
 
 grid-auto-flow: row (valor padrão), column, dense;
+
+Função minmax(): Determina valor mínimo e máximo que uma coluna ou linha terá de tamanho. Sua estrutura é bastante utilizada juntamente com a propriedade grid-template-columns, grid-template-rows.
+
+Exemplos:
+
+grid-template-columns: minmax(100px, 200px); ---> uma coluna com mínimo 100px de largura e 200px de lar
+grid-template-rows: minmax(150px, 200px) minmax(30px, 500px); ---> duas linhas com mínimos e máximos de altura
+grid-template-columns: repeat(3, minmax(130px, 150px)); ---> usando minmax dentro de repeat
+
+Grid Lines: Divisórias que compõem a estrutura da grade. As linhas entre as colunas são chamadas de column lines e, as que estão entre as faixas horizontais, são chamadas de row lines. Cada linha possui um número que pode-se utilizar como referência.
+
+Exemplo:
+
+.container{
+  border: 2px solid;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 4fr repeat(2, 1fr);
+  grid-template-rows: 50px 100px 200px;
+}
+
+.item-01 {
+  grid-column-start: 2; --> item vai começar na linha coluna 2
+  grid-column-end: 5; --> item vai terminar na linha coluna 5
+  grid-row-start: 1; --> item vai começar na linha linha 1;
+  grid-row-end: 3; --> item vai terminar na linha linha 3;
+}
+
+.item-02 {
+  grid-column-start: 1; 
+  grid-column-end: span 4; --> ocupa os 4 espaços disponíveis entre as linhas colunas
+  grid-row-start: 2;
+  grid-row-end: span 2; --> ocupa 2 espaços disponíveis entre as linhas linhas
+}
+
+.item-03 {
+  grid-column: 1 / span 4; --> shorthand onde o 1 é o valor do grid column start e o span 4 é o grid column end
+  grid-row: 2 / 3; --> shorthand onde o 2 é o valor do grid row start e o 3 é o grid row end
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Propriedade Grid Area define valores das propriedades grid-row-start, grid-row-end, grid-column-start, grid-column-end de uma só vez. A estrutura é:
+
+grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end;
+
+// Antes
+
+.item {
+  grid-column-start: 1; 
+  grid-column-end: span 4;
+  grid-row-start: 2;
+  grid-row-end: span 2; 
+}
+
+// Depois
+
+.item {
+  grid-area: 2 / 1 / span 2 / span 4;
+}
+
+Obs: É possível nomear as áreas do grid e posicionar os itens dentro de áreas específicas, as referenciando através de nome como header, main, sidebar, footer etc. Isso é por meio de uma propriedade chamada grid-template-areas.
+
+Exemplo:
+
+body {
+  display: grid;
+  grid-template-columns: repeat (4, 1fr); // 4 colunas
+  grid-template-rows: repeat (3, 200px); // 3 linhas
+  grid-template-areas: "header header header header" "main main . sidebar" "footer footer footer footer" --> o . representa um espaço vazio sem nenhuma tag/elemento
+}
+
+header {
+  background-color: orange;
+  grid-area: header;
+}
+
+main {
+  background-color: blue;
+  grid-area: main;
+}
+
+aside {
+  background-color: red;
+  grid-area: aside;
+}
+
+footer{
+  background-color: yellow;
+  grid-area: footer;
+}
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Propriedade Grid-Template é um conjunto das propriedades grid-template-rows, grid-template-columns e grid-template-areas. Definindo os valores dessa forma, não é possível utilizar a função repeat. A estrutura é:
+
+grid-template: grid-template-areas grid-template-rows / grid-template-columns;
+
+Exemplo: 
+
+grid-template: "header header header header" 200px "main main . sidebar" 200px "footer footer footer footer" 200px / 1fr 1fr 1fr 1fr
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Propriedades Column-Gap e Row-Gap: Define espaçamento entre as faixas do grid.
+
+column-gap: 10px;
+row-gap: 20px;
+gap: row-gap column-gap; 
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Propriedade Grid é um conjunto das propriedades grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns e grid-auto-flow.
+
+grid: grid-template-rows / grid-template-columns
+
+Se grid-auto-flow: row, então:
+
+grid: auto-flow / grid-template-columns
+
+Se grid-auto-flow: column, então:
+
+grid: grid-template-columns / auto-flow 
+
+Exemplo:
+
+// Antes
+
+.container {
+  grid-template-rows: 100px 300px;
+  grid-template-columns: 3fr 1fr;
+}
+
+// Depois 
+
+.container {
+  grid: 100px 300px /3fr 1fr;
+}
+
+// Antes
+
+.container {
+  grid-auto-flow: row dense;
+  grid-auto-rows: 100px;
+  grid-template-columns: 1fr 2fr;
+}
+
+// Depois
+
+.container{
+  grid: auto-flow dense 100px / 1fr 2fr;
+}
+
+// Antes
+
+.container {
+  grid-template-rows: 100px 300px;
+  grid-auto-flow: column;
+  grid-auto-columns: 200px;
+}
+
+// Depois
+
+.container{
+  grid: 100px 300px / auto-flow 200px;
+}
+
+// Antes
+
+.container {
+  grid-template-areas: "header header header" "footer footer footer";
+  grid-template-rows: 1fr 25px;
+  grid-template-columns: auto 50px auto;
+}
+
+// Depois
+
+.container{
+  grid: "header header header" 1fr "footer footer footer" 25px / auto 50px auto;
+}
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Justify-items é uma propriedade do container que alinha os itens na horizontal.
+
+justify-items: start, center, end, stretch (valor padrão);
+
+Align-items é uma propriedade do container que os itens na vertical.
+
+align-items: start, center, end, stretch (valor padrão);
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Propriedade Place-items é um conjunto das propriedades justify-items e align-items. A estrutura é:
+
+place-items: align-items justify-items;
+
+palce-items: start end;
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Justify-Content: é uma propriedade do container que alinha o conteúdo da grade horizontalmente.
+
+justify-content: start, end, center, space-between, space-around, space-evenly.
+
+Align-Content: é uma propriedade do container que alinha o conteúdo da grade verticalmente.
+
+align-content: start, end, center, space-between, space-around, space-evenly.
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Propriedade Place-Content é um conjunto das propriedades justify-content e align-content. A estrutura é:
+
+place-content: align-content justify-content;
+
+place-content: center space-between;
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Justify-Self: É uma propriedade do item no qual é alinhado horizontalmente dentro da célula que ele está dentro.
+
+justify-self: start, end, center, stretch (valor padrão);
+
+Align-self: É uma propriedade do item no qual é alinhado verticalmente dentro da célula que ele está dentro.
+
+Align-self: start, end, center, stretch (valor padrão);
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Propriedade Place-Self é um conjunto das propriedades justify-self e align-self. A estrutura é:
+
+place-self: align-self justify-self;
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Materiais de Estudo de Grid:
+-Grid Garden;
+-CSS Grid;
+-A Complete Guide to Grid;
+-CSS Grid Layout Web Docs;
+-Grid Guide (Origamid);
 ```
 
 
