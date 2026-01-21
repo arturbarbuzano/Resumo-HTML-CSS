@@ -1244,6 +1244,13 @@ Materiais de Estudo de Grid:
 -Grid Guide (Origamid);
 ```
 
+### Responsividade
+
+Responsividade é um conjunto de melhores práticas para que o nosso layout responda e se adapte em diversos dispositivos diferentes.
+
+Multicolunas: Especifica em quantas colunas o conteúdo será dividido e o navegador irá calcular o tamanho delas conforme o tamanho da tela mudar. Propriedades que são utilizadas: column-width: valor; column-count: numero-de-colunas; column-rule: 1px solid red; column-gap: valor;
+
+Media queries: Recurso que permite aplicar propriedades do CSS somente para algumas regras de tipos de mídia específicos.
 
 
 
