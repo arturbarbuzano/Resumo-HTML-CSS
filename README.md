@@ -291,7 +291,7 @@ Obs: É possível utilizar todos os conceitos de seletores, agrupamento e combin
 Unidades de Medida Absolutas: Não dependem de nenhum outro valor de referência.
 Ex: cm, mm, Q, in, pc, pt e px.
 
-Unidades de Medida Relativas: Dependem de outro valor de referência, o que faz com que o resultado possa variar de acordo com o valor da propriedade do elemento que se baseia. Ex: % (se baseia no elemento pai da mesma propriedade), em (se baseia no valor do font-size do elemento pai ou do mesmo elemento só que usa outra propriedade), rem (parecido com em, mas se baseia somente no valor do font-size da tag html que é 16px), vw (tamanho da largura da área visível da página web variando de dispositivo para dispositivo, 1vm = 1% do tamanho da largura por exemplo) e vh (tamanho da altura da área visível da página web variando de dispositivo para dispositivo, 2vh = 2% do tamanho da altura por exemplo).
+Unidades de Medida Relativas: Dependem de outro valor de referência, o que faz com que o resultado possa variar de acordo com o valor da propriedade do elemento que se baseia. Ex: % (se baseia no elemento pai da mesma propriedade), em (se baseia no valor do font-size do elemento pai ou do mesmo elemento só que usa outra propriedade), rem (parecido com em, mas se baseia somente no valor do font-size da tag html que é 16px), vw (tamanho da largura da área visível da página web variando de dispositivo para dispositivo, 1vm = 1% do tamanho da largura por exemplo) e vh (tamanho da altura da área visível da página web variando de dispositivo para dispositivo, 2vh = 2% do tamanho da altura da viewport por exemplo).
 
 Função Calc: realiza o cálculo de valores que podem ser de unidades de medidas diferentes. A estrutura é:
 
@@ -1251,6 +1251,42 @@ Responsividade é um conjunto de melhores práticas para que o nosso layout resp
 Multicolunas: Especifica em quantas colunas o conteúdo será dividido e o navegador irá calcular o tamanho delas conforme o tamanho da tela mudar. Propriedades que são utilizadas: column-width: valor; column-count: numero-de-colunas; column-rule: 1px solid red; column-gap: valor;
 
 Media queries: Recurso que permite aplicar propriedades do CSS somente para algumas regras de tipos de mídia específicos.
+
+Estrutura dos media queries:
+
+```sh
+Exemplo:
+@media screen (min-width: 320px) and (max-width: 768px)
+
+@media é um AT-RULE, uma regra utilizada para identificar o tipo de mídia que uma página está sendo visualizada, informando os recursos que esse tipo de mídia suporta e os operadores que podem ser combinados para misturar algumas condições.
+
+screen é um media type que tem como função definir o tipo de mídia que os estilos CSS devem ser aplicados. O screen por exemplo, corresponde aos dispositivos com telas integradas, o speech tem haver com dispositivos que leem o conteúdo em formato de aúdio como leitor de tela, o print são documentos que possuem uma pré-visualização de impressão, ou em qualquer mídia que será voltada para imprimir e o all (valor padrão) corresponde a todos os dispositivos.
+
+(min-width: 320px) (max-width: 768px) são media features, configuram com quais recursos de mídia se quer combinar para aplicar determinados estilos. Nesse exemplo, eles detecta o a largura mínima e máxima da viewport. O orientation detecta se o dispositivo está em modo portrait (retrato) ou landscape(paisagem), hover indica que a página está sendo acessada atráves de um mecanismo de ponteiro e o pointer detecta quaão preciso é o ponteiro, ajuda a detectar touchscreen, mouse e entre outros.
+
+and é um operador que serve para combinar as media features para atender as condições para aplicar os estilos. Nesse caso o and atende a todas media features. O not nega as condições e inverte todo o significado da media query e o or atende no mínimo uma das media features.
+
+Obs: é possível utilizar as media queries no HTML, por exemplo:
+
+<link rel="stylesheet" href="style.css" media="all"> 
+
+Exemplo prático:
+
+@media screen and (max-width: 690px) 
+{
+  .image-container {
+    background-image: url('assets/images/receba.png');
+  }
+}
+
+Materiais de Estudo:
+  -Media Queries for Standard Devices;
+  -A Complete Guide to CSS Media Queries;
+  -Fundamentos de web design responsivo;
+  -Resposive design;
+  -9 basic principles of responsive web design;
+  -Using media queries;
+```
 
 
 
