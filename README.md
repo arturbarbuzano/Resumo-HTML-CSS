@@ -1288,6 +1288,108 @@ Materiais de Estudo:
   -Using media queries;
 ```
 
+### Pseudo-elementos e Pseudo-classes
+
+Pseudo-elementos são usados para adicionar elementos extras na página sem a necessidade de colocar no HTML ou para selecionar uma parte de algum elemento.  É identificado por ::palavra-chave
+
+```sh
+::first-letter: seleciona a primeira letra da primeira linha. 
+Propriedades que estão disponíveis são: color, background, margin, padding, border, font, propriedades de texto. Ex:
+
+::first-letter{
+  color: red;
+}
+
+::first-line: seleciona a primeira linha do texto.
+Propriedades que estão disponíveis são: color, background, font, propriedades de texto. Ex:
+
+p::first-line{
+  color: blue;
+}
+
+::backdrop: estiliza o plano de fundo de elementos em modo de tela cheia, como dialog ou video. Ex:
+
+video::backdrop{
+  background: green;
+  }
+
+::marker: estiliza os tópicos ou número de uma lista (li) ou então a flecha de um elemento summary. Propriedades aceitas: color, content, white-space, font, animation e transition. Ex:
+
+summary::marker {
+  content: "👍";
+  color: red;
+}
+
+::placeholder: placeholder é uma dica para ajudar no preenchimento de algum campo de formulário. Propriedades aceitas: color, font, background, text. Ex:
+
+input::placeholder {
+  color: yellow;
+}
+
+::selection: estiliza a seleção de textos no navegador. Propriedades aceitas: color, background-color, text. Ex:
+
+::selection{
+  background-color: pink;
+}
+
+::file-selector-button: estiliza o botão de enviar arquivos. Ex:
+
+input::file-selectior-buttor{
+    border: 2px solid purple;
+     background-color: violet;
+}
+
+::before: cria um elemento dentro do seletor e esse elemento vem antes dos outros que são do seletor. Ex:
+
+p::before{
+  content: "👍";
+  color: orange;
+}
+
+Exemplo prático - degradê de imagem com cor:
+
+.card-image{
+  width: 300px;
+  height: 300px;
+  background: url('caminho') no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image::before{
+  content:'';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent, red);
+}
+
+::after: cria um elemento dentro do seletor e esse elemento vem depois dos outros que são do seletor. Ex:
+
+p::after{
+  content: "👍";
+  color: blue;
+}
+```
+Pseudo-classes são estado especiais do elemento. Um exemplo bastante comum é especificar no seletor que o ponteiro do está sobre o elemento. É identificado por :palavra-chave.
+
+```sh
+:hover: representa o estado do elemento quanto o ponteiro passa por cima de qualquer elemento. Ex:
+
+button:hover {
+  background-color: lightblue;
+  color: blue;
+  cursor: pointer;
+}
+
+:active: representa a interação do usuário com o elemento, como o click em um botão. Ex:
+
+button:active {
+  background-color: black;
+}
+```
+
 
 
 
