@@ -1388,7 +1388,184 @@ button:hover {
 button:active {
   background-color: black;
 }
+
+:focus: representa a interação do usuário que indica que o elemento está sendo focado. Bastante utilizado em inputs do usuário em um formulário. Ex:
+
+input:focus {
+  outline: 2px dashed green;
+}
+
+:focus-within: representa a estilização de um elemento pai e que seu elemento filho tem interação com usuário. Ex:
+
+label:focus-within {
+  font-weight: bold;
+}
+
+:enabled: representa que o elemento está habilitado. Usado para formulários. Ex:
+
+button:enabled{
+  background-color: pink;
+  color: purple;
+}
+
+:disabled: representa que o elemento não está habilitado. Usado para formulários. Ex:
+
+button:disabled{
+  background-color: lightblue;
+  color: blue;
+}
+
+// No documento HTML precisa colocar o atributo disabled
+
+<button disabled>Botão desabilitado</button>
+
+:link: estiliza a tag a antes de clicar no link. Ex:
+
+a:link{
+  color: yellow;
+}
+
+:visited: estiliza a tag a depois de clicar no link. Ex:
+
+:visited{
+  color: red;
+}
+
+:checked: estiliza o quadrado de checklist de uma lista quando estiver selecionado. Ex:
+
+input:checked + label{
+  color: red;
+}
+
+:valid: representa que um input/elemento vai possuir um conteúdo válido. Ex:
+
+input:valid{
+  color: green;
+}
+
+:invalid: representa que um input/elemento vai possuir um conteúdo inválido. Ex:
+
+input:invalid{
+  color: red;
+}
+
+:in-rage: representa um input que está entre os valores min e max. Ex:
+
+input:in-rage{
+  background-color: palegreen;
+}
+
+:out-ofrage: representa um input que não está entre os valores min e max. Ex:
+
+input:out-ofrage{
+  background-color: red;
+}
+
+// No documento HTML precisa colocar os valores min e max para in-rage e out-ofrage funcionarem.
+
+<input  type=number min=3 max=10>
+
+:required: representa campos que são obrigatórios. Utilizado em formulários. Ex:
+
+input:required{
+  border-color: red;
+}
+
+:optional: representa campos que são opcionais. Utilizado em formulários. Ex:
+
+input:optional{
+  border-color: blue;
+}
+
+:root: representa a raiz do documento. Sem nenhum elemento relacionado, o :root nesse caso é igual a tag html. Ex:
+
+:root{
+  background-color: pink;
+}
+
+Mesma coisa que 
+
+html{
+  background-color: pink;
+}
+
+:nth-child(): seleciona o elemento filho de acordo com a ordem informada pelo índice. Ex:
+
+article p:nth-child(1){ --> 1 significa o primeiro parágrafo
+  color: red;
+}
+
+:nth-of-type(): seleciona o elemento que for do tipo e índice informado. Ex:
+
+article p:nth-of-type(1){
+  color: green;
+}
+
+
+:first-of-type: seleciona o primeiro elemento de um tipo específico. Ex:
+
+article:first-of-type{
+  background-color: pink;
+}
+
+:last-of-type: seleciona o último elemento de um tipo específico. Ex:
+
+article:last-of-type{
+  background-color: purple;
+}
+
+:nth-last-child(): seleciona o elemento filho de baixo pra cima de acordo com a ordem informada pelo índice. Ex:
+
+li:nth-last-child(2){
+  font-weight: bold;
+}
+
+:only-child: seleciona o elemento que tem um único filho. Ex:
+
+li:only-child{
+  color: red;
+  font-weight: bold;
+}
+
+:only-type: seleciona o elemento que não tem irmãos do mesmo tipo. Ex:
+
+main:only-type{
+  color: red;
+}
+
+:empty: seleciona qualquer elemento que não possui elemento filho. Ex:
+
+div:empty{
+  background-color: green;
+}
+
+:is: simplifica a forma de selecionar elementos filhos de uma mesma div. Ex:
+
+
+.post:is(h1, li, .red){
+  color: blue;
+}
+
+// Mesma coisa que
+
+.post h2, .post li, .post .red{
+  color: blue;
+}
+
+:not(): nega um elemento informado entre os parênteses. Ex:
+
+.post p:not(.irrelevante){
+  background-color: green;
+}
+
+:has(): seleciona o elemento que estiver entre os parênteses. Ex:
+
+.gallery figure has(figcaption){
+  border: 2px solid black;
+  padding 8px;
+}
 ```
+
 
 
 
