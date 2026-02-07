@@ -1567,6 +1567,8 @@ div:empty{
 ```
 ### Transformações e Animações
 
+<b>Transformações em 2D</b>
+
 Transform é uma propriedade que permite realizar várias transformações em 2D utilizando diversos métodos capazes de fazerem os elementos se moverem de um lugar para o outro. Os principais métodos de transformação em 2D são:
 
 ```sh
@@ -1590,7 +1592,7 @@ rotate(graus): rotaciona o elemento conforme o grau indicado entre parênteses. 
   transform: rotateY(75deg); --> rotaciona no eixo y
 }
 
-scale(largura, altura): possibilita que o elemento seja aumentado ou diminuído utilizando altura e largura. Ex:
+scale(largura, altura): possibilita que o elemento seja aumentado ou diminuído utilizando altura e largura definidos. Ex:
 
 .box:hover{
   transform: scale(2,3); --> aumentou o tamanho da largura em 2 vezes e da altura em 3 vezes, tem também as versões scaleX e scaleY
@@ -1607,7 +1609,59 @@ matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()): resume
 .box:hover{
   transform: matrix(1.2, 0.5, 0, 1.5, 50, 50);
 }
-````
+```
+<b>Transformações em 3D</b>
+
+Perspectiva é a forma na qual nós percebemos um objeto, é a ilusão de que algo é tridimensional. Para transformar algo em 3D será utilizado a propriedade perspective que define o quão longe o objeto está do usuário. Um valor mais baixo vai resultar em um efeito 3D mais inteso que um valor mais alto. É uma propriedade que deve ser utilizada no elemento pai assim os elementos filhos conseguem obter o efeito. 
+
+```sh
+body{
+  perspective: 100px;
+  perspective-origin: center (valor padrão), center top, center bottom, right bottom, right top, left bottom, left top etc; --> propriedade usada em conjunta com perspective pra determinar direção observada da perspectiva
+}
+
+rotateZ(): rotaciona o elemento no eixo Z que significa profundidade, aumenta ou diminui ela conforme o grau indicado entre os parênteses. Funciona só quando for aplicado o rotateX() e rotateY(), ainda também pode ser utilizado a perspective no elemento pai pra aumentar o efeito 3D mas mesmo sem já funciona um pouco. Ex:
+
+.box{
+  transform: rotateX(20deg) rotateY(40deg) rotateZ(20deg);
+}
+
+translateZ(): movimenta o elemento pra mais perto ou longe do usuário conforme os valores indicados entre parênteses. Ex:
+
+.box{
+  transform: translateZ(300px);
+}
+
+scaleZ(): escala o elemento z e aceita números negativos. Ex:
+
+.box{
+  transform: scaleZ(4);
+}
+
+transform-origin: determina qual é a origem pra o elemento rotacionar por exemplo. Ex:
+
+.box{
+  transform-origin: center(valor padrão), left top, left bottom, right top, right bottom;
+}
+
+transform-style: especifica pra esses elementos como eles devem ser renderizados. Essa propriedade deve ficar no elemento pai e deve ter pelo menos uma propriedade transform no elemento filho. Ex:
+
+body{
+  transform-style: flat, preserve-3d;
+}
+
+matrix3d(): igual ao matrix no 2D mais funções no eixo Z. Ex:
+
+.box{
+  transform: matrix3d(1.2, -0.035, 5, 4, 0, 1, -0.7, 1, 30, 0, -0,3, 12, 10, 4, 1, 0);
+}
+
+backface-visibility: define se parte de trás do elemento deve estar visível. Ex:
+
+.box{
+  backface-visibility: visible, hidden;
+}
+```
 
 
 
