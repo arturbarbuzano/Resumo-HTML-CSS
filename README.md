@@ -1565,6 +1565,50 @@ div:empty{
   padding 8px;
 }
 ```
+### Transformações e Animações
+
+Transform é uma propriedade que permite realizar várias transformações em 2D utilizando diversos métodos capazes de fazerem os elementos se moverem de um lugar para o outro. Os principais métodos de transformação em 2D são:
+
+```sh
+translate(eixo x, eixo y): movimenta o elemento conforme os valores indicados entre parênteses. Ex:
+
+.box:hover{
+  transform: translate(50px, -12px);
+}
+
+rotate(graus): rotaciona o elemento conforme o grau indicado entre parênteses. Ex:
+
+.box:hover{
+  transform: rotate(75deg);
+}
+
+.box:hover{
+  transform: rotateX(75deg); --> rotaciona no eixo X
+}
+
+.box:hover{
+  transform: rotateY(75deg); --> rotaciona no eixo y
+}
+
+scale(largura, altura): possibilita que o elemento seja aumentado ou diminuído utilizando altura e largura. Ex:
+
+.box:hover{
+  transform: scale(2,3); --> aumentou o tamanho da largura em 2 vezes e da altura em 3 vezes, tem também as versões scaleX e scaleY
+}
+
+skew(eixoX, eixoY): distorce o elemento conforme o grau indicado entre parênteses. Ex:
+
+.box:hover{
+  transform: skew(30deg, 50deg); --> distorce no eixo X e Y, tem também as versões skewX e skewY
+}
+
+matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY()): resume valores de outras funções pra uma única função. Ex:
+
+.box:hover{
+  transform: matrix(1.2, 0.5, 0, 1.5, 50, 50);
+}
+````
+
 
 
 
