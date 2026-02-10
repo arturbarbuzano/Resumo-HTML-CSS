@@ -1662,6 +1662,180 @@ backface-visibility: define se parte de trás do elemento deve estar visível. E
   backface-visibility: visible, hidden;
 }
 ```
+<b>Animações</b>
+
+Transition é uma propriedade shorthand que permite seja alterado os valores das propriedades de forma suave e indicar a duração dessa transição. Veja a estrutura:
+
+```sh
+
+transition: transition-property transition-duration transition-tiring-function(linear, ease, ease-in, ease-out, ease-in-out) transition-delay;
+
+transition: background 1s linear, transform 1.5s ease-in-out 3s; --> duas transition property seguidas de um transition-duration e transition-tiring-function em cada uma e no final transition-delay;
+
+@keyframes: são recursos que possibilitam estilização CSS em certos tempos de animação. Com isso, é preciso também utilizar o animation-name e animation-duration no elemento que será feito a animação. Ex:
+
+@keyframe exemplo{
+
+  0%{
+    background-color: green;
+    width: 100px;
+  }
+
+  50%{
+    background-color: blue;
+    width: 200px;
+  }
+
+  100%{
+    background-color: red;
+    width: 300px;
+  }
+}
+
+.box{
+  background-color: pink;
+  animation-name: exemplo;
+  animation-duration: 10s;
+  animation-delay: 2s; --> tempo para animação iniciar
+  animation-iteration-count: 3; --> número de vezes que a animação vai rodar
+  animation-direction: normal, reverse, alternate, alternate-reverse; --> vai determinar se a animação deve rodar pra frente, pra trás ou alternado
+  animation-timing-function: linear, ease, ease-in, ease-out, ease-in-out; --> muda velocidade da animação
+  animation-fill-mode: none (valor padrão), backwards, forwards, both; --> define qual estilo que animação vai antes de ser executada ou depois de ser executada ou em ambos
+}
+
+.box:hover{
+  animation-play-state: paused; --> pausar animação;
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+Propriedade animation é um conjunto de todas as propriedades vistas de animation. É possível colocar os valores de todas das propriedades numa única propriedade que é animation. A estrutura é:
+
+animation: change-background duration timing-function delay iteration-count direction;
+
+Ex:
+
+.box{
+  width: 200px;
+  height: 200px;
+  background-color pink;
+  animation: change-background 5s linear 2s infinite alternative;
+}
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Exemplo prático - Bolinhas carregando:
+
+.loader{
+  border: 2px solid purple;
+  border-radius: 50%;
+  margin: 6px;
+}
+
+loader:nth-child(1){
+  animation: loader .8s ease-in-out alternative infinite;
+}
+
+loader:nth-child(2){
+  animation: loader .8s ease-in-out .3s alternative infinite;
+}
+
+loader:nth-child(3){
+  animation: loader .8s ease-in-out .6s alternative infinite;
+}
+
+@keyframes loader{
+  to{
+    transform: scale(1.8);
+  }
+}
+
+Exemplo prático - Foguete decolando:
+
+body{
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, rgb(34, 34, 34) 0%, rgb(43,13,60), rgb(74,153, 230) 100%);
+}
+
+
+.rocket{
+  animation: take-off-rocket 6s ease-in-out infinite alternative;
+}
+
+@keyframes take-off-rocket {
+  0% {
+    transform: translateY(20vh);
+  }
+  50% {
+    transform: translateY(-80vh);
+  }
+  100% {
+    transform: translateY(20vh);
+  }
+}
+
+Exemplo prático - Fundo mudando de Cor:
+
+body{
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(-45deg, #d53369, #daae51);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient{
+  0% {
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
+}
+
+Exemplo prático - Botão se mexendo:
+
+button{
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 1.5rem;
+  background: linear-gradient(-45deg, #d53369, #daae51);
+  box-shadow: 8px 12px 7px lightgray;
+  animation: wiggle 2.2 linear infinite;
+}
+
+@keyframes wiggle{
+
+  0% {
+    transform: rotate(0);
+  15%{
+    transform: rotate(-15deg);
+  }
+  20%{
+    transform: rotate(10deg);
+    }
+  25%{
+    transform: rotate(-10deg);
+  }
+  30%{
+    transform: rotate(10deg);
+  }
+  35%{
+    transform: rotate(-10deg);
+  }
+  40%, 100%{
+    transform: rotate(0);
+  }
+}
+
+```
 
 
 
