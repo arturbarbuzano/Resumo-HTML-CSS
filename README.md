@@ -1834,9 +1834,24 @@ button{
     transform: rotate(0);
   }
 }
-
 ```
+### Variáveis CSS
 
+Variáveis CSS é uma forma de declarar propriedades para reutilizar valores específicos. Declaração:  --nome-da-variavel. Referência: var(--nome-da-variavel). Ex:
+
+```sh
+:root{
+  --bg-gradient: linear-gradient(-45deg, #d53369, #daae51); --> declaração normalmente ocorre no root mas ainda não mudou nada, só foi declarado a variável
+}
+
+h1{
+  background: var(--bg-gradient); --> agora foi referenciado, a variável criada está sendo utilizada
+}
+
+h1{
+  background: var(--text-color-blue, red); --> quando faz isso, se a variável --text-color-blue não tiver sido criada, o valor que será aplicado é o red.
+}
+```
 
 
 
