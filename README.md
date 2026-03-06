@@ -1808,7 +1808,7 @@ button{
   font-size: 1.5rem;
   background: linear-gradient(-45deg, #d53369, #daae51);
   box-shadow: 8px 12px 7px lightgray;
-  animation: wiggle 2.2 linear infinite;
+  animation: wiggle 2.2s linear infinite;
 }
 
 @keyframes wiggle{
